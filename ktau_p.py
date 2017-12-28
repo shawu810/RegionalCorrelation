@@ -159,7 +159,7 @@ def ktau_p(x, xcen, y, ycen):
     return tau, p
     
 if __name__ == '__main__':
-    # testing contest    
+    # testing 
     x = np.array([26., 26.,26.,26.,26.,26.,26.,26.,26.,26.,26.,26.,26., 27])
     xcen = np.array([ 1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,  1.,0])
     ycen = np.array([ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0., 00.,  0.,  0.,  0.,  0.,0])
