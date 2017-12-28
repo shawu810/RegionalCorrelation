@@ -4,6 +4,9 @@ Authors
 -------
 - Nezar Abdennur
 - Anton Goloborodko
+
+source:
+https://gist.github.com/nvictus/66627b580c13068589957d6ab0919e66
 """
 from __future__ import division, print_function
 import numpy as np
