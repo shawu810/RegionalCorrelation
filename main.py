@@ -9,6 +9,7 @@ Created on Tue Dec 19 16:53:34 2017
 import ConfigParser
 import numpy as np
 import sys
+import os
 from Slider import Slider
 
 def load_default_config():
@@ -16,7 +17,7 @@ def load_default_config():
     
     config.add_section('IO Parameter')
     config.set('IO Parameter', 'input_path', 'data/data.csv')
-    config.set('IO Parameter', 'output_path_prefix', '')
+    config.set('IO Parameter', 'output_path_prefix', 'output/')
     
     config.add_section('Sliding Parameter')
     config.set('Sliding Parameter', 'step_size', 0.002)
@@ -62,6 +63,9 @@ if __name__ == '__main__':
          
     INPUT_PATH = cfg.get('IO Parameter', 'input_path')
     OUTPUT_PATH_PREFIX = cfg.get('IO Parameter', 'output_path_prefix')
+    if not os.path.exists(OUTPUT_PATH_PREFIX):
+        os.makedirs(OUTPUT_PATH_PREFIX)    
+    
     data = np.loadtxt(INPUT_PATH, dtype=str, delimiter=',')
     
     data = np.array(data, dtype=float)
