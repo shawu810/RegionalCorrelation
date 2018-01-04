@@ -31,7 +31,7 @@ def load_default_config():
     
     config.add_section('FLAGS')
     config.set('FLAGS', 'NULL_FLAG', -10000000)
-    
+    config.write(open('sample.cfg', 'wb'))
     return config
     
 
