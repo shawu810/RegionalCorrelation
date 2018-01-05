@@ -34,6 +34,12 @@ python main.py sample.cfg
 ```
 3. Outputs are in output folder
 
+# Only run drawing code
+Alternatively, you can only run the drawing code by:
+```bash
+python drawing.py [your_config_file]
+```
+
 # Sample configuration file:
 Here is a sample configuration file (sample.cfg). 
 ```
