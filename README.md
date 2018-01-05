@@ -9,7 +9,7 @@ https://github.com/shawu810/RegionalCorrelation
 
 ## How to run the code:
 1. Specify parameters in the configuration file, e.g., sample.cfg.
-2. Put your data under the directory specified in the configuration file (by input_path). The data should a csv file with the following format:
+2. Put your data under the directory specified in the configuration file (by input_path). The data should be a csv file with the following format:
 ```
 # input csv files the columns should be: 
 # longitude, latitude, variable1, variable1 censor flag, variable 2, variable 2 censor flag
@@ -34,6 +34,9 @@ Here is a sample configuration file (sample.cfg).
 # Censor flag takes value from 0 or 1. 0 being uncensored value and 1 being left censored value (<).
 # example: 
 #         -76.622689,41.94494,20.2,0,1795.712751,0
+#         -76.622689,41.94494,20.2,0,1795.712751,0
+#         -76.622689,41.94494,20.2,0,1795.712751,0
+#         ...
 input_path = data/data.csv 
 
 # the output folder
