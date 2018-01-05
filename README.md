@@ -24,18 +24,19 @@ https://github.com/shawu810/RegionalCorrelation
 ```bash
 python main.py [your_config_file]
 ```
+4. Outputs are in the output folder. In the folder there are three files:
+- [OUTPUT_PREFIX]_heatmap.pdf : The heatmap drawing.
+- [OUTPUT_PREFIX]_corr_matrix.csv : The csv file for correlation matrix. Need to have this file for running the drawing code.
+- [OUTPUT_PREFIX]_data_count_matrix.csv: The csv file for data matrix. Need to have this file for running the drawing code.
 
-Example:
+
+#Example:
 To run code with defualt parameters:
 1. Put data under the data folder and name the file data.csv
 2. Run
 ```bash
 python main.py sample.cfg
 ```
-3. Outputs are in the output folder. In the folder there are three files:
-- [OUTPUT_PREFIX]_heatmap.pdf : The heatmap drawing.
-- [OUTPUT_PREFIX]_corr_matrix.csv : The csv file for correlation matrix. Need to have this file for running the drawing code.
-- [OUTPUT_PREFIX]_data_count_matrix.csv: The csv file for data matrix. Need to have this file for running the drawing code.
 
 # Only run drawing code:
 Alternatively, you can only run the drawing code by:
