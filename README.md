@@ -26,35 +26,30 @@ https://github.com/shawu810/RegionalCorrelation
 python main.py [your_config_file]
 ```
 
-# Sample configuration file
-
+# Sample configuration file:
 Here is a sample configuration file (sample.cfg). 
 ```
 [IO Parameter]
-# input csv files the columns should be: 
-# longitude, latitude, variable1, variable1 censor flag, variable 2, variable 2 censor flag
-# all values need to numerical. 
-# Censor flag takes value from 0 or 1. 0 being uncensored value and 1 being left censored value (<).
-# example: 
-#         -76.622689,41.94494,20.2,0,1795.712751,0
-#         -76.622689,41.94494,20.2,0,1795.712751,0
-#         -76.622689,41.94494,20.2,0,1795.712751,0
-#         ...
+# Path to the input csv file. Take both absolute or relative path. 
 input_path = data/data.csv 
 
-# the output folder
+# Output folder. Take both absolute or relative path. Will create new folder if not exist.
 output_path_prefix = output/
 
 
 [Sliding Parameter]
-step_size = 0.002
+# Unit for parameters step_size and w_size is degree. 0.002 is approximately 220 meters, and 0.05 is approximately 5.5 km.
+step_size = 0.002 
 w_size = 0.05
-measure = cenken
+
 min_lng = -76.85
 max_lng = -76.15
 min_lat = 41.492
 max_lat = 42.008
 skip_thres = 10
+
+# Only supports cenken now (censored value adjusted Kendall Tau)
+measure = cenken
 
 [FLAGS]
 null_flag = -10000000
