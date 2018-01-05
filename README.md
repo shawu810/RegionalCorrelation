@@ -7,7 +7,7 @@ Version 1 code is at here:
 https://github.com/shawu810/RegionalCorrelation
 
 
-## How to run the code:
+# How to run the code:
 1. Specify parameters in the configuration file, e.g., sample.cfg.
 2. Put your data under the directory specified in the configuration file (by input_path). The data should be a csv file with the following format:
 ```
@@ -26,7 +26,7 @@ https://github.com/shawu810/RegionalCorrelation
 python main.py [your_config_file]
 ```
 
-
+# Sample configuration file
 
 Here is a sample configuration file (sample.cfg). 
 ```
