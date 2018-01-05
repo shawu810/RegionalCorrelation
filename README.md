@@ -17,6 +17,9 @@ https://github.com/shawu810/RegionalCorrelation
 # Censor flag takes value from 0 or 1. 0 being uncensored value and 1 being left censored value (<).
 # example: 
 #         -76.622689,41.94494,20.2,0,1795.712751,0
+#         -76.622689,41.94494,20.2,0,1795.712751,0
+#         -76.622689,41.94494,20.2,0,1795.712751,0
+#         ....622689,41.94494,20.2,0,1795.712751,0
 ```
 3. Run the code
 ```bash
