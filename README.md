@@ -7,6 +7,7 @@ Version 1 code is at here:
 https://github.com/shawu810/RegionalCorrelation
 
 # How to run the code:
+0. You need to have Python2.7 and numpy installed on your computer.
 1. Specify parameters in the configuration file, e.g., sample.cfg.
 2. Put your data under the directory specified in the configuration file (by input_path). The data should be a csv file with the following format:
 ```
