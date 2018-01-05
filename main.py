@@ -11,67 +11,38 @@ import numpy as np
 import sys
 import os
 from Slider import Slider
+from drawing import draw_heat_map
 
-def load_default_config():
-    config = ConfigParser.RawConfigParser()
-    
-    config.add_section('IO Parameter')
-    config.set('IO Parameter', 'input_path', 'data/data.csv')
-    config.set('IO Parameter', 'output_path_prefix', 'output/')
-    
-    config.add_section('Sliding Parameter')
-    config.set('Sliding Parameter', 'step_size', 0.002)
-    config.set('Sliding Parameter', 'w_size', 0.05)
-    config.set('Sliding Parameter', 'measure', 'cenken')
-    config.set('Sliding Parameter', 'min_lng', -76.85)
-    config.set('Sliding Parameter', 'max_lng', -76.15)
-    config.set('Sliding Parameter', 'min_lat', 41.492)
-    config.set('Sliding Parameter', 'max_lat', 42.008)
-    config.set('Sliding Parameter', 'SKIP_THRES', 10)    
-    
-    
-    config.add_section('FLAGS')
-    config.set('FLAGS', 'NULL_FLAG', -10000000)
-    config.write(open('sample.cfg', 'wb'))
-    return config
-    
-
-def unpack_param(cfg):
-    #  data, NULL_FLAG, SKIP_THRES, min_lng, max_lng, min_lat, max_lat, w_size, step_size)
-    return {
-        'NULL_FLAG': cfg.getint('FLAGS', 'NULL_FLAG'), 
-        'SKIP_THRES': cfg.getint('Sliding Parameter', 'SKIP_THRES'),
-        'min_lng': cfg.getfloat('Sliding Parameter', 'min_lng'),
-        'max_lng': cfg.getfloat('Sliding Parameter', 'max_lng'), 
-        'min_lat': cfg.getfloat('Sliding Parameter', 'min_lat'), 
-        'max_lat': cfg.getfloat('Sliding Parameter', 'max_lat'), 
-        'w_size': cfg.getfloat('Sliding Parameter', 'w_size'), 
-        'step_size': cfg.getfloat('Sliding Parameter', 'step_size')        
-    }
-
-###############################################################################
-# PARA
-###############################################################################
-
+from utility import unpack_drawing_param
+from utility import unpack_method_param
+from utility import load_data
 
 if __name__ == '__main__':
+    cfg = ConfigParser.RawConfigParser()
     if len(sys.argv) == 1:
         print 'loading default'
-        cfg = load_default_config()
+        cfg.read('sample.cfg')
     else:
-        cfg = ConfigParser.RawConfigParser().read(sys.argv[1]) 
+        cfg.read(sys.argv[1], 'rb')
          
-    INPUT_PATH = cfg.get('IO Parameter', 'input_path')
-    OUTPUT_PATH_PREFIX = cfg.get('IO Parameter', 'output_path_prefix')
-    if not os.path.exists(OUTPUT_PATH_PREFIX):
-        os.makedirs(OUTPUT_PATH_PREFIX)    
     
-    data = np.loadtxt(INPUT_PATH, dtype=str, delimiter=',')
+    OUTPUT_FOLDER = cfg.get('IO Parameter', 'output_folder')
+    if not os.path.exists(OUTPUT_FOLDER):
+        os.makedirs(OUTPUT_FOLDER)    
+    OUTPUT_PREFIX = cfg.get('IO Parameter', 'output_prefix')
     
-    data = np.array(data, dtype=float)
-    slider = Slider(data, **unpack_param(cfg))
-    slider.comput_heatmap()
+    slider = Slider()
+    slider.set_data(load_data(cfg))
+    slider.set_param(**unpack_method_param(cfg))
+    slider.compute_heatmap()
+    
     heatmap = slider.get_coor_matrix()
     datamap = slider.get_data_count_matrix()
-    np.savetxt(OUTPUT_PATH_PREFIX + 'corr_matrix', heatmap, delimiter=',', fmt='%s')
-    np.savetxt(OUTPUT_PATH_PREFIX + 'data_count_matrix', datamap, delimiter=',', fmt='%s')
+    
+    np.savetxt(OUTPUT_FOLDER + OUTPUT_PREFIX + '_corr_matrix.csv', 
+               heatmap, delimiter=',', fmt='%s')
+    np.savetxt(OUTPUT_FOLDER + OUTPUT_PREFIX + '_data_count_matrix.csv', 
+               datamap, delimiter=',', fmt='%s')
+    
+    ## drawing
+    draw_heat_map(slider, **unpack_drawing_param(cfg))
