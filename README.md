@@ -25,6 +25,7 @@ https://github.com/shawu810/RegionalCorrelation
 python main.py [your_config_file]
 ```
 
+Example:
 To run code with defualt parameters:
 1. Put data under the data folder and name the file data.csv
 2. Run
