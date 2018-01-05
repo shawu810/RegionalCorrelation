@@ -8,7 +8,8 @@ https://github.com/shawu810/RegionalCorrelation
 
 
 ## How to run the code:
-1. Put your data under the data/ folder. The data should a csv file with the following format:
+1. Specify parameters in the configuration file, e.g., sample.cfg.
+2. Put your data under the directory specified in the configuration file (by input_path). The data should a csv file with the following format:
 ```
 # input csv files the columns should be: 
 # longitude, latitude, variable1, variable1 censor flag, variable 2, variable 2 censor flag
@@ -17,15 +18,11 @@ https://github.com/shawu810/RegionalCorrelation
 # example: 
 #         -76.622689,41.94494,20.2,0,1795.712751,0
 ```
-2. Run 
+3. Run the code
 ```bash
-python main.py  -- This will load the default parameter settings. 
+python main.py [your_config_file]
 ```
 
-
-
-Run code with new parameterization:
-Python main.py [your_config_file] -- This will load your own parameter settings
 
 
 Here is a sample configuration file (sample.cfg). 
