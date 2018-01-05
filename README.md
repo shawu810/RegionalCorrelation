@@ -53,7 +53,8 @@ Here is a sample configuration file (sample.cfg).
 input_path = data/data.csv 
 
 # Output folder. Take both absolute or relative path. Will create new folder if not exist.
-output_path_prefix = output/
+output_folder = output/
+output_prefix = test
 
 
 [Sliding Parameter]
