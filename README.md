@@ -47,7 +47,8 @@ output_path_prefix = output/
 
 [Sliding Parameter]
 # Unit for parameters step_size and w_size is degree. 0.002 is approximately 220 meters, and 0.05 is approximately 5.5 km.
-step_size = 0.002 
+# Here we setp step_size to be 0.02 (2.2km) for testing run
+step_size = 0.02 
 w_size = 0.05
 
 min_lng = -76.85
@@ -59,6 +60,9 @@ skip_thres = 10
 # Only supports cenken now (censored value adjusted Kendall Tau)
 measure = cenken
 
-[FLAGS]
-null_flag = -10000000
+
+[Drawing Parameter]
+tick_number = 10
+tick_label_precision = 2
+dpi = 500
 ```
