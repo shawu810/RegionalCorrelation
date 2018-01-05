@@ -7,7 +7,7 @@ Version 1 code is at here:
 https://github.com/shawu810/RegionalCorrelation
 
 
-How to run the code:
+## How to run the code:
 1. Put your data under the data/ folder. The data should a csv file with the following format:
 ```
 # input csv files the columns should be: 
@@ -17,9 +17,12 @@ How to run the code:
 # example: 
 #         -76.622689,41.94494,20.2,0,1795.712751,0
 ```
+2. Run 
+```bash
+python main.py  -- This will load the default parameter settings. 
+```
 
 
-Python main.py  -- This will load the default parameter settings. 
 
 Run code with new parameterization:
 Python main.py [your_config_file] -- This will load your own parameter settings
