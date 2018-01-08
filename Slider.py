@@ -44,7 +44,7 @@ class Slider:
         # Initialization     
         w_size = self.w_size
         step_size = self.step_size
-        index_step = self.w_size // self.step_size
+        index_step = int(self.w_size // self.step_size)
         bound_min_x = self.min_x - w_size
         bound_max_x = self.max_x + w_size
         bound_min_y = self.min_y - w_size
@@ -73,8 +73,10 @@ class Slider:
                 has_data_view = self.has_data_matrix[i:i+index_step+1, j:j+index_step+1] 
                 has_data_view += 1
                 #view[np.where(view ==  self.NULL_FLAG)] = 0.0
-                v, p = ktau_p(inwindow_data[:, self.x_index], inwindow_data[:, self.xcen_index], 
-                              inwindow_data[:, self.y_index], inwindow_data[:, self.ycen_index])
+                v, p = ktau_p(inwindow_data[:, self.x_index], 
+                                inwindow_data[:, self.xcen_index], 
+                              inwindow_data[:, self.y_index], 
+                                inwindow_data[:, self.ycen_index])
                     
                 if p >= 0.05:
                     continue
