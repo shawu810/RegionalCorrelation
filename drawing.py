@@ -59,7 +59,7 @@ if __name__ == '__main__':
         print 'loading default for drawing'
         cfg.read('sample.cfg')
     else:
-        cfg.read(sys.argv[1], 'rb')
+        cfg.read(sys.argv[1])
          
     
     OUTPUT_FOLDER = cfg.get('IO Parameter', 'output_folder')
