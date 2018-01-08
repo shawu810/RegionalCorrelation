@@ -69,8 +69,9 @@ class Slider:
                 if len(inwindow_data) < self.SKIP_THRES:
                     continue
                 
-                view = self.result_matrix[i:i+index_step+1, j:j+index_step+1]
-                has_data_view = self.has_data_matrix[i:i+index_step+1, j:j+index_step+1] 
+                view = self.result_matrix[i:int(i+index_step+1), 
+                                          j:int(j+index_step+1)]
+                has_data_view = self.has_data_matrix[i:int(i+index_step+1), j:int(j+index_step+1)] 
                 has_data_view += 1
                 #view[np.where(view ==  self.NULL_FLAG)] = 0.0
                 v, p = ktau_p(inwindow_data[:, self.x_index], 
