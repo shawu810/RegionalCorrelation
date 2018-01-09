@@ -13,7 +13,7 @@ https://github.com/shawu810/RegionalCorrelation
 ```
 # input csv files the columns should be: 
 # longitude, latitude, variable1, variable1 censor code, variable 2, variable 2 censor code
-# all values need to numerical. 
+# all values need to be numerical. 
 # Censor code takes value from 0 or 1. 0 being uncensored value and 1 being left censored value (<).
 # example: 
 #         -76.622689,41.94494,20.2,0,1795.712751,0
