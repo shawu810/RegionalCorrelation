@@ -32,7 +32,7 @@ python main.py [your_config_file]
 
 
 #Example:
-To run code with defualt parameters:
+To run code with default parameters:
 1. Put data under the data folder and name the file data.csv
 2. Run
 ```bash
