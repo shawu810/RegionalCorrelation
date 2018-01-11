@@ -2,9 +2,11 @@
 Reference:
 Zhenhui Li, Cheng You, Matthew Gonzales, Anna K. Wendt, Fei Wu, and Susan L. Brantley, 
 Searching for Anomalous Methane in Shallow Groundwater near Shale Gas Wells. Journal of Contaminant Hydrology 195 (2016): 23-30.
+link to the reference: https://www.sciencedirect.com/science/article/pii/S0169772216300985
 
 Version 1 code is at here:
 https://github.com/shawu810/RegionalCorrelation
+
 
 # How to run the code:
 0. You need to have Python2.7, matplotlib and numpy installed on your computer.
