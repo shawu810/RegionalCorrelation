@@ -41,7 +41,7 @@ def draw_heat_map(slider,
     norm2 = mpl.colors.Normalize(vmin=0.,vmax=1.)
     
     
-    handler = plt.imshow(matrix* -1, cmap ='bwr', norm=norm)
+    handler = plt.imshow(matrix* -1, cmap ='bwr_r', norm=norm)
     handler.axes.set_xticks(index_x)
     handler.axes.set_xticklabels(value_x)
     handler.axes.set_yticks(index_y)
