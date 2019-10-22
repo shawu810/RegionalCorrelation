@@ -12,6 +12,7 @@ https://github.com/shawu810/RegionalCorrelation
 0. You need to have Python2.7, matplotlib and numpy installed on your computer.
 1. Specify parameters in the configuration file, e.g., sample.cfg.
 2. Put your data under the directory specified in the configuration file (by input_path). The data should be a csv file with the following format:
+3. Special note for running codes of advanced heatmap plotting: codes require geopandas package in addition to above mentioned.
 ```
 # input csv files the columns should be: 
 # longitude, latitude, variable1, variable1 censor code, variable 2, variable 2 censor code
